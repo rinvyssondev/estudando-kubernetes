@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  capacity:
+    storage: 10Gi
+  acessModes:
+    - ReadWriteOnce ###Um pod por vez
+    ###ReadWriteMany Multiplos pod podem ler e escrever
+    ###ReadOnlyMAny multiplos pod podem ler de uma vez só
+  gcePersistentDisk:
+    pdName: pv-disk
+  storageClassName: standard
